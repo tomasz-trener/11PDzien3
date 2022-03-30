@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,13 +23,27 @@ namespace P03PolaczenieZBaza
             connection.Open();
             reader = sqlCommand.ExecuteReader(); // wysłanie polecenia SQL
 
-            reader.Read();
-            string wynik = (string)reader.GetValue(2);
-            Console.WriteLine(wynik);
+            int liczbaKolumn = reader.FieldCount;
+
+            StringBuilder sb = new StringBuilder();
+
+            while (reader.Read())
+            {
+                //string wynik = "";
+                for (int i = 0; i < liczbaKolumn; i++)
+                    sb.Append(Convert.ToString(reader.GetValue(i)) + ";");
+
+                sb.Append("\n");
+                //Console.WriteLine(wynik);
+            }
 
             connection.Close();
             Console.ReadKey();
 
+            if (!Directory.Exists(@"c:\dane"))
+                Directory.CreateDirectory(@"c:\dane");
+
+            File.WriteAllText(@"c:\dane\wynikZawodnicy.txt", sb.ToString());
         }
     }
 }
