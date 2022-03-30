@@ -11,7 +11,7 @@ namespace P07BibliotekaZawodnicyRepository
         static void Main(string[] args)
         {
             Console.WriteLine("wersja 1: dane wczytujemy do tablicy tablic");
-            PolaczenieZBaza pzb = new PolaczenieZBaza("Data Source=mssql4.webio.pl,2401;Initial Catalog=tomasz1_zawodnicy;User ID=tomasz1_zawodnicy;Password=Alxalx1!");
+            PolaczenieZBaza pzb = new PolaczenieZBaza("***");
 
             var wynik =
                 pzb.WykonajPolecenieSQL("select kraj, avg(wzrost) from zawodnicy group by kraj");

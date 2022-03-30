@@ -18,7 +18,7 @@ namespace P05Problem
 
 
             string connString =
-               "Data Source=mssql4.webio.pl,2401;Initial Catalog=tomasz1_zawodnicy;User ID=tomasz1_zawodnicy;Password=Alxalx1!";
+               "***";
 
             connection = new SqlConnection(connString);
             sqlCommand = new SqlCommand("select *, format(data_ur,'dd-MM-yyyy') from zawodnicy", connection);

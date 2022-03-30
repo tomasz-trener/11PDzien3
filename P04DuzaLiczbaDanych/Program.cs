@@ -17,7 +17,7 @@ namespace P04DuzaLiczbaDanych
             SqlDataReader reader;  // czyta wynik z bazy 
 
             string connString =
-                "Data Source=mssql4.webio.pl,2401;Initial Catalog=tomasz1_zawodnicy;User ID=tomasz1_zawodnicy;Password=Alxalx1!";
+                "***";
             connection = new SqlConnection(connString);
             sqlCommand = new SqlCommand("select * from zawodnicy", connection);
             connection.Open();

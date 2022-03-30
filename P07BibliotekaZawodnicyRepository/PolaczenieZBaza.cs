@@ -13,7 +13,7 @@ namespace P07BibliotekaZawodnicyRepository
 
         public PolaczenieZBaza()
         {
-            connString = "Data Source=mssql4.webio.pl,2401;Initial Catalog=tomasz1_zawodnicy;User ID=tomasz1_zawodnicy;Password=Alxalx1!";
+            connString = "***";
         }
 
         public PolaczenieZBaza(string connString)
