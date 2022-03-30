@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P06PolaczenieZBaza
+namespace P07BibliotekaZawodnicyRepository
 {
     internal class Program
     {

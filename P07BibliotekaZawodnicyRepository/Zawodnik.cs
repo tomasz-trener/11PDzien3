@@ -11,7 +11,7 @@ namespace P07BibliotekaZawodnicyRepository
         public int Id_zawodnika;
         public int Id_trenera;
         public string Imie;
-        private string nazwisko;
+        public string Nazwisko;
         public string Kraj;
         public DateTime DataUrodzenia; 
         public int Wzrost;
@@ -23,17 +23,21 @@ namespace P07BibliotekaZawodnicyRepository
         //    Console.WriteLine(wynik);
         //}
 
+        public Zawodnik()
+        {
+
+        }
         public Zawodnik(string imie, string nazwisko)
         {
             Imie = imie;
-            this.nazwisko = nazwisko;
+            this.Nazwisko = nazwisko;
         }
 
         public string PrzedstawSie2()
         {
           //  string nazwisko ="x";
 
-            string wynik = $"Nazywam sie {Imie} {this.nazwisko} i pochodze z {Kraj}";
+            string wynik = $"Nazywam sie {Imie} {this.Nazwisko} i pochodze z {Kraj}";
             return wynik;
         }
 

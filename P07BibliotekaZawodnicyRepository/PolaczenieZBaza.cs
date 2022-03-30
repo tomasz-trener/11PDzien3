@@ -21,7 +21,7 @@ namespace P07BibliotekaZawodnicyRepository
             this.connString = connString;   
         }
 
-        public string[][] WykonajPolecenieSQL(string sql)
+        public object[][] WykonajPolecenieSQL(string sql)
         {
             SqlConnection connection; //do komunikacji z baza
             SqlCommand sqlCommand;      // przechowuje polecenia SQL
@@ -36,15 +36,15 @@ namespace P07BibliotekaZawodnicyRepository
             int liczbaKolumn = reader.FieldCount;
 
             
-            List<string[]> wynik = new List<string[]>();
+            List<object[]> wynik = new List<object[]>();
 
             while (reader.Read())
             {
-                string[] komorki = new string[liczbaKolumn];
+                object[] komorki = new object[liczbaKolumn];
                 wynik.Add(komorki);
 
                 for (int i = 0; i < liczbaKolumn; i++)
-                    komorki[i] = Convert.ToString(reader.GetValue(i));
+                    komorki[i] = reader.GetValue(i);
             }
 
             connection.Close();

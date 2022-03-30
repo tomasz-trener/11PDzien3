@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P06PolaczenieZBaza
+namespace P07BibliotekaZawodnicyRepository
 {
     internal class ZawodnicyRepository
     {
@@ -31,7 +31,6 @@ namespace P06PolaczenieZBaza
                 z.Waga = Convert.ToInt32(wynik[i][7]);
                 zawodnicy.Add(z);
             }
-
             return zawodnicy.ToArray();
         }
 

@@ -1,0 +1,3 @@
+﻿
+
+Prosze podłączyć się pod bibliotkę zawodnicy repository i pobrac z bazy zawodników
