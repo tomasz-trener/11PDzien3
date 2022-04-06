@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GrupaIdTrenera.cs" />
     <Compile Include="PolaczenieZBaza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WynikSQL.cs" />
     <Compile Include="ZawodnicyRepository.cs" />
     <Compile Include="Zawodnik.cs" />
   </ItemGroup>

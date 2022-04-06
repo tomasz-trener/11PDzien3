@@ -13,7 +13,7 @@ namespace P07BibliotekaZawodnicyRepository
 
         public PolaczenieZBaza()
         {
-            connString = "***";
+            connString = "Data Source=mssql4.webio.pl,2401;Initial Catalog=tomasz1_zawodnicy;User ID=tomasz1_zawodnicy;Password=Alxalx1!";
         }
 
         public PolaczenieZBaza(string connString)
@@ -21,7 +21,7 @@ namespace P07BibliotekaZawodnicyRepository
             this.connString = connString;   
         }
 
-        public object[][] WykonajPolecenieSQL(string sql)
+        public WynikSQL WykonajPolecenieSQL(string sql)
         {
             SqlConnection connection; //do komunikacji z baza
             SqlCommand sqlCommand;      // przechowuje polecenia SQL
@@ -47,8 +47,13 @@ namespace P07BibliotekaZawodnicyRepository
                     komorki[i] = reader.GetValue(i);
             }
 
+           
+
+            WynikSQL w = new WynikSQL();
+            w.Dane = wynik.ToArray();
+            w.Naglowki = Enumerable.Range(0, reader.FieldCount).Select(reader.GetName).ToArray();
             connection.Close();
-            return wynik.ToArray();
+            return w;
         }
 
 

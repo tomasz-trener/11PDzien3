@@ -10,12 +10,27 @@ namespace P07BibliotekaZawodnicyRepository
     {
         public int Id_zawodnika;
         public int Id_trenera;
-        public string Imie;
+        public string Imie { get; set; }
         public string Nazwisko;
         public string Kraj;
-        public DateTime DataUrodzenia; 
+        public DateTime DataUrodzenia;
         public int Wzrost;
         public int Waga;
+
+        public List<string> ZmienionePola = new List<string>();
+
+        public object[] DynamiczneKolumny;
+        public string[] DynamiczneNaglowkiKolumn;
+
+        public string ImieNazwisko
+        {
+            get
+            {
+                return Imie + " " + Nazwisko;
+            }
+        }
+
+       
 
         //public void PrzedstawSie1()
         //{
@@ -35,7 +50,7 @@ namespace P07BibliotekaZawodnicyRepository
 
         public string PrzedstawSie2()
         {
-          //  string nazwisko ="x";
+            //  string nazwisko ="x";
 
             string wynik = $"Nazywam sie {Imie} {this.Nazwisko} i pochodze z {Kraj}";
             return wynik;
